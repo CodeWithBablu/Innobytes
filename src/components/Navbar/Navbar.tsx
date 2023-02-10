@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <>
 
-      <div className=' flex items-center justify-between px-2 py-3 md:rounded-lg md:px-4 md:py-2 bg-transparent md:bg-navbar mt-4 '>
+      <div className=' absolute top-4 w-full flex items-center justify-between px-2 py-3 rounded-lg md:px-4 md:py-2 bg-transparent md:bg-navbar'>
 
 
         <div className=' relative flex items-center space-x-4 '>
@@ -37,7 +37,7 @@ const Navbar = () => {
           <motion.div whileTap={{ scale: 0.7 }} className=' z-10 flex space-x-2 items-center cursor-pointer'>
 
             <img className=' w-6 h-6 sm:h-8 sm:w-8 rounded-full' src="/images/logo.png" alt='logo' />
-            <h2 className=' flex md:text-xl  lg:text-2xl text-gradient bg-gradient-to-r from-boagreen via-rose-300 to-cyan-300 font-semibold font-dynapuff '>Innobytes.</h2>
+            <h2 className=' flex text-xl sm:text-2xl  text-gradient bg-gradient-to-r from-boagreen via-rose-300 to-cyan-300 font-semibold font-dynapuff '>Innobytes.</h2>
 
           </motion.div>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
                 {item.content.length > 0 &&
 
-                  <div className=' hidden group-hover:flex sidebar flex-grow flex-col absolute top-[48px] left-0 right-0 mx-auto rounded-xl max-w-[1100px]'>
+                  <div className=' hidden group-hover:flex sidebar flex-grow flex-col absolute top-[35px] left-0 right-0 mx-auto rounded-xl max-w-[1100px]'>
 
                     <div className=' w-full h-10 bg-transparent' />
 

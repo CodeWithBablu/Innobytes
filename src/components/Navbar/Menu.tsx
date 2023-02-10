@@ -36,6 +36,17 @@ const LinkContainer = {
   },
 }
 
+const FeildContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1,
+    }
+  },
+}
+
 type MenuProps = {
   navbarItems: { title: string; content: string[]; }[];
   setMenuStatus: Dispatch<SetStateAction<boolean>>;
@@ -55,26 +66,34 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
       className="flex md:hidden justify-end fixed right-0 
       top-0 h-screen w-full bg-black/50 z-20" onClick={() => { setMenuStatus(false), setSelectedFeild("") }}>
 
-      {/* main cart section */}
+      {/* main menu section */}
       <motion.div
-        key="cart"
+        key="menu"
         initial={{ x: "50%" }}
         animate={{ x: "0%" }}
         exit={{ x: "50%" }}
         transition={{ type: "tween" }}
-        className="relative bg-secondary rounded-2xl w-4/5 p-2 sm:w-3/5 sm:p-4 overflow-y-scroll" onClick={(e) => e.stopPropagation()}>
+        className="relative bg-secondary rounded-2xl w-4/5 px-2 py-8 sm:w-3/5 sm:px-8 overflow-y-scroll" onClick={(e) => e.stopPropagation()}>
 
         <div className=' flex flex-col space-y-8'>
 
           <motion.span onClick={() => { setMenuStatus(false), setSelectedFeild("") }} className='cursor-pointer flex justify-end w-full text-white '>{closeicon}</motion.span>
-          <div className=' flex  flex-col space-y-2'>
+
+          <motion.div
+            variants={FeildContainer}
+            initial="hidden"
+            animate="show"
+            className=' flex  flex-col space-y-2'>
             {
               navbarItems.map((item) => (
 
-                <div key={item.title} className=' flex flex-col' >
+                <motion.div
+                  key={item.title}
+                  variants={Link}
+                  className=' flex flex-col' >
 
                   <div onClick={() => setSelectedFeild((prev) => prev === item.title ? "" : item.title)} className=' flex items-center'>
-                    <span className=' cursor-pointer text-2xl font-prostone text-gradient bg-gradient-to-r from-rose-300 to-pink-300'>{item.title}</span>
+                    <span className=' cursor-pointer text-2xl font-prostone text-gradient bg-gradient-to-r from-rose-300 to-pink-200'>{item.title}</span>
                     {item.content.length > 0 &&
                       <span className=' cursor-pointer text-2xl font-prostone text-rose-300'>{selectedFeild == item.title ? arrowdownicon : arrowupicon}</span>
                     }
@@ -91,6 +110,7 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
                       {
                         item.content.map((link) => (
                           <motion.span
+                            key={link}
                             layout
                             variants={Link}
                             className=' flex items-center ml-4 text-sm font-poppins font-semibold text-indigo-200 hover:text-boagreen cursor-pointer'>
@@ -101,11 +121,11 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
                     </motion.div>
                   }
 
-                </div>
+                </motion.div>
 
               ))
             }
-          </div>
+          </motion.div>
 
           <motion.span whileTap={{ scale: 0.7 }} className=' cursor-pointer w-fit text-white rounded-full px-6 border-2 border-indigo-300'>Contact us</motion.span>
 
