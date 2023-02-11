@@ -100,7 +100,7 @@ const Layout = ({ children }: any) => {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/images/logo.png" />
           </Head>
-          <div className='px-2 max:px-0 max-w-[1800px] m-auto relative'>
+          <div className='px-2 max:px-0 max-w-[1800px] m-auto relative overflow-hidden'>
             <Navbar />
             {children}
           </div>

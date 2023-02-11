@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react';
 
-const arrowicon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
+const arrowicon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className=" w-6 h-6 sm:w-10 sm:h-10">
   <path fillRule="evenodd" d="M16.72 7.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 010 1.06l-3.75 3.75a.75.75 0 11-1.06-1.06l2.47-2.47H3a.75.75 0 010-1.5h16.19l-2.47-2.47a.75.75 0 010-1.06z" clipRule="evenodd" />
 </svg>;
 
@@ -10,7 +11,24 @@ const minusicon = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fi
 </svg>;
 
 
+
 export default function Home() {
+
+
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"]
+  })
+
+  const SCALEX_Val = useTransform(scrollYProgress, [0, 1], ['1.5', '1']);
+  const SCALEY_Val = useTransform(scrollYProgress, [0, 1], ['1.5', '1']);
+  const OPACITY_Val = useTransform(scrollYProgress, [0, 1], ['0', '1']);
+
+
+  console.log("heelo:", scrollYProgress);
+
+
   return (
     <>
       <main>
@@ -59,25 +77,43 @@ export default function Home() {
 
 
         {/* //// 2nd Page Start */}
-        <div className=' grid grid-cols-2 gap-0 h-[500px] pt-32'>
+        <div className=' flex flex-col px-2 space-y-2 justify-between h-[500px] sm:px-10 lg:grid lg:grid-cols-2 gap-0 lg:h-[500px] pt-32'>
 
-          <div className=' flex flex-col space-y-3 items-center justify-center'>
-            <h2 className=' text-dimWhite text-5xl font-bold font-poppins'>What our</h2>
-            <h1 className=' text-gradient bg-gradient-to-br from-cyan-400 to-pink-500 text-6xl font-bold font-poppins'>Clients say</h1>
-          </div>
+          <div className='flex items-center lg:justify-center'>
 
-
-          <div className=' flex flex-col pt-20 px-28 justify-around bg-indigo-700'>
-            <span className=' text-white font-prostone'>They think about products in terms of how it works and not just how it looks. They're experts at what they do</span>
-
-            <div className=' flex items-center justify-between text-white'>
-              <span className=' flex items-baseline font-poppins text-xl'>{minusicon} NEIL JOGLEKAR (Uber)</span>
-              <motion.span whileTap={{ scale: 0.6 }} className=' flex items-center cursor-pointer'>{arrowicon}</motion.span>
+            <div>
+              <h2 className=' text-dimWhite text-2xl sm:text-5xl font-bold font-poppins'>What our{' '}
+                <span className=' sm:block text-gradient bg-gradient-to-br from-cyan-400 to-pink-500 text-4xl sm:text-6xl font-bold font-poppins'>Clients say</span>
+              </h2>
             </div>
+
           </div>
+
+
+          <motion.div
+            ref={ref}
+            style={{ scaleX: SCALEX_Val, scaleY: SCALEY_Val }}
+            className=' pt-4 sm:pt-20 px-2 sm:px-10 2xl:px-24 h-[230px] sm:h-[250px] lg:h-full bg-indigo-700'>
+
+            <motion.div
+              style={{ opacity: OPACITY_Val }}
+              className=' flex h-full flex-col justify-around'
+            >
+              <span className=' text-white font-sono text-sm sm:text-lg'>They think about products in terms of how it works and not just how it looks. They're experts at what they do</span>
+
+              <div className=' flex items-center justify-between text-white'>
+                <span className=' flex items-baseline font-poppins sm:text-xl'>{minusicon} NEIL JOGLEKAR (Uber)</span>
+                <motion.span whileTap={{ scale: 0.6 }} className=' flex items-center cursor-pointer'>{arrowicon}</motion.span>
+              </div>
+            </motion.div>
+
+          </motion.div>
 
         </div>
 
+        {/* //// 2nd Page end */}
+
+        <div className=' w-full bg-primary h-[1900px]'></div>
 
       </main>
     </>
