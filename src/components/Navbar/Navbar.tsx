@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <>
 
-      <div className=' absolute top-4 w-full flex items-center justify-between px-2 py-3 rounded-lg md:px-4 md:py-2 bg-transparent md:bg-navbar'>
+      <div className=' absolute left-0 right-0 mx-auto top-4 flex items-center justify-between px-4 py-3 rounded-lg md:py-2 bg-transparent md:bg-navbar'>
 
 
         <div className=' relative flex items-center space-x-4 '>

@@ -60,7 +60,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         dynapuff: ['DynaPuff', 'cursive'],
-        fredoka: ['Fredoka One', 'cursive'],
+        fredoka: ['Fredoka', 'sans-serif'],
         righteous: ['Righteous', 'cursive'],
         prostone: ['Prosto One', 'cursive'],
         sono: ['Sono', 'sans-serif'],
