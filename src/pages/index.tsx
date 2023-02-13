@@ -155,5 +155,3 @@ export default function Home() {
 }
 
 
-
-// flex w-full overflow-x-scroll pt-4 px-2 sm:px-10 lg:pt-10 2xl:px-24 h-[230px] sm:h-[250px] lg:rounded-none lg:h-full

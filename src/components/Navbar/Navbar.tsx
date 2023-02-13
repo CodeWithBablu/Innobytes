@@ -34,13 +34,15 @@ const Navbar = () => {
         <div className="absolute z-0 bottom-2 left-0 w-12 h-12 bg-cyan-400 rounded-full
      filter blur-xl opacity-80 animate-blob animation-delay-3000"></div> */}
 
-          <motion.div whileTap={{ scale: 0.7 }} className=' z-10 flex space-x-2 items-center cursor-pointer'>
+          <Link href={`/`}>
 
-            <img className=' w-6 h-6 sm:h-8 sm:w-8 rounded-full' src="/images/logo.png" alt='logo' />
-            <h2 className=' flex text-xl sm:text-2xl  text-gradient bg-gradient-to-r from-boagreen via-rose-300 to-cyan-300 font-semibold font-dynapuff '>Innobytes.</h2>
+            <motion.div whileTap={{ scale: 0.7 }} className=' z-10 flex space-x-2 items-center cursor-pointer'>
 
-          </motion.div>
+              <img className=' w-6 h-6 sm:h-8 sm:w-8 rounded-full' src="/images/logo.png" alt='logo' />
+              <h2 className=' flex text-xl sm:text-2xl  text-gradient bg-gradient-to-r from-boagreen via-rose-300 to-cyan-300 font-semibold font-dynapuff '>Innobytes.</h2>
 
+            </motion.div>
+          </Link>
 
         </div>
 
@@ -78,9 +80,13 @@ const Navbar = () => {
         </div>
 
         <div className=' flex items-center space-x-4'>
-          <motion.button whileTap={{ scale: 0.7 }} className=' hidden md:flex rounded-lg py-2 px-4 text-white text-xs md:text-sm font-dynapuff border-[1px] border-cyan-200 hover:border-cyan-400'>Contact Us</motion.button>
+
+          <Link href={`/contact-us/contact-form-page`}>
+            <motion.button whileTap={{ scale: 0.7 }} className=' hidden md:flex rounded-lg py-2 px-4 text-white text-xs md:text-sm font-dynapuff border-[1px] border-cyan-200 hover:border-cyan-400'>Contact Us</motion.button>
+          </Link>
 
           <motion.span whileTap={{ scale: 0.7 }} onClick={() => setMenuStatus(true)} className=' md:hidden text-dimWhite cursor-pointer'>{menuicon}</motion.span>
+
         </div>
 
       </div>

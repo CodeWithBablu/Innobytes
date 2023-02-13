@@ -1,4 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
+import Link from 'next/link';
+
 import { motion } from 'framer-motion'
 
 const closeicon = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 font-bold hover:animate-pulse">
@@ -20,12 +22,12 @@ const minusicon = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0
 
 
 //Animation variants
-const Link = {
+const Links = {
   hidden: { opacity: 0, scale: 0.8 },
   show: { opacity: 1, scale: 1 },
 }
 
-const LinkContainer = {
+const LinksContainer = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -83,13 +85,13 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
             variants={FeildContainer}
             initial="hidden"
             animate="show"
-            className=' flex  flex-col space-y-2'>
+            className=' flex flex-col space-y-2'>
             {
               navbarItems.map((item) => (
 
                 <motion.div
                   key={item.title}
-                  variants={Link}
+                  variants={Links}
                   className=' flex flex-col' >
 
                   <div onClick={() => setSelectedFeild((prev) => prev === item.title ? "" : item.title)} className=' flex items-center'>
@@ -102,7 +104,7 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
                   {selectedFeild === item.title && item.content.length > 0 &&
                     < motion.div
                       layout
-                      variants={LinkContainer}
+                      variants={LinksContainer}
                       initial="hidden"
                       animate="show"
                       transition={{ delay: 1, ease: "backInOut" }}
@@ -112,7 +114,7 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
                           <motion.span
                             key={link}
                             layout
-                            variants={Link}
+                            variants={Links}
                             className=' flex items-center ml-4 text-sm font-poppins font-semibold text-indigo-200 hover:text-boagreen cursor-pointer'>
                             {minusicon}{link}
                           </motion.span>
@@ -127,7 +129,9 @@ const Menu: React.FC<MenuProps> = ({ navbarItems, setMenuStatus }) => {
             }
           </motion.div>
 
-          <motion.span whileTap={{ scale: 0.7 }} className=' cursor-pointer w-fit text-white rounded-full px-6 border-2 border-indigo-300'>Contact us</motion.span>
+          <Link href={`/contact-us/contact-form-page`}>
+            <motion.span whileTap={{ scale: 0.8 }} className=' text-center inline-block cursor-pointer w-full text-white text-lg font-medium font-dynapuff rounded-2xl py-2 border-2 border-cyan-100'>Contact us</motion.span>
+          </Link>
 
         </div>
 

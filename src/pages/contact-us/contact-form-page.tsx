@@ -9,17 +9,17 @@ const Contactform = (props: Props) => {
 
       <form>
 
-        <div className=' grid grid-cols-2'>
+        <div className=' flex flex-col space-y-8 lg:space-y-0 lg:grid grid-cols-2'>
 
-          <span className=' flex items-center justify-center text-7xl text-indigo-100 font-bold'>Contact Us</span>
+          <span className=' flex items-center lg:justify-center text-4xl lg:text-7xl text-gradient bg-gradient-to-r from-indigo-500 via-indigo-300 to-lime-400 font-bold'>Contact Us</span>
 
-          <div className=' flex flex-col space-y-4 px-20'>
+          <div className=' flex flex-col space-y-4 px-2 lg:px-20'>
 
-            <span className=' text-dimWhite text-base font-poppins font-semibold'>
+            <span className=' text-dimWhite text-sm md:text-base font-poppins font-semibold'>
               Please complete the form below, So we can help serve you better.
             </span>
 
-            <span className=' text-rose-100 text-base font-poppins font-semibold'>
+            <span className=' text-sky-200 text-sm md:text-base font-poppins font-semibold'>
               Please Note : Due to the volume of inquiries, we cannot respond to everyone. Where we can, we will respond as soon as possible.
             </span>
 
@@ -43,11 +43,11 @@ const Contactform = (props: Props) => {
 
 
 
-        <div className=' grid grid-cols-2'>
+        <div className=' flex flex-col space-y-8 lg:space-y-0 lg:grid grid-cols-2'>
 
-          <span className=' flex items-center justify-center text-5xl text-indigo-100 font-bold'>About You</span>
+          <span className=' flex items-center lg:justify-center text-3xl lg:text-5xl text-gradient bg-gradient-to-r from-indigo-500 via-indigo-300 to-lime-400 font-bold'>About You</span>
 
-          <div className=' flex flex-col space-y-4 px-20'>
+          <div className=' flex flex-col space-y-4 px-4 lg:px-20'>
 
             <span className=' text-slate-400 font-semibold'> <span className=' text-rose-500 font-bold text-lg'>*</span> First Name</span>
             <input onChange={() => { }} required className=' text-dimWhite bg-navbar p-3 border-2 border-slate-500 hover:border-boagreen focus:border-boagreen outline-none font-poppins font-medium rounded-lg' name="firstname" type="text" />
@@ -72,11 +72,11 @@ const Contactform = (props: Props) => {
 
 
 
-        <div className=' grid grid-cols-2'>
+        <div className=' flex flex-col space-y-8 lg:space-y-0 lg:grid grid-cols-2'>
 
-          <span className=' flex items-center justify-center text-5xl text-indigo-100 font-bold'>About your business</span>
+          <span className=' flex items-center lg:justify-center text-3xl lg:text-5xl text-indigo-100 text-gradient bg-gradient-to-r from-indigo-500 via-indigo-300 to-lime-400 font-bold'>About your business</span>
 
-          <div className=' flex flex-col space-y-4 px-20'>
+          <div className=' flex flex-col space-y-4 px-4 lg:px-20'>
 
             <span className=' text-slate-400 font-semibold'> <span className=' text-rose-500 font-bold text-lg'>*</span> Company Name :</span>
             <input onChange={() => { }} required className=' text-dimWhite bg-navbar p-3 border-2 border-slate-500 hover:border-boagreen focus:border-boagreen outline-none font-poppins font-medium rounded-lg' name="companyname" type="text" />
@@ -91,11 +91,11 @@ const Contactform = (props: Props) => {
 
 
 
-        <div className=' grid grid-cols-2'>
+        <div className=' flex flex-col space-y-8 lg:space-y-0 lg:grid grid-cols-2'>
 
-          <span className=' flex items-center justify-center text-5xl text-indigo-100 font-bold'>Your message</span>
+          <span className=' flex items-center lg:justify-center text-3xl lg:text-5xl text-gradient bg-gradient-to-r from-indigo-500 via-indigo-300 to-lime-400 font-bold'>Your message</span>
 
-          <div className=' flex flex-col space-y-4 px-20'>
+          <div className=' flex flex-col space-y-4 px-4 lg:px-20'>
 
             <span className=' text-slate-400 font-semibold'> <span className=' text-rose-500 font-bold text-lg'>*</span> Message :</span>
             <textarea onChange={() => { }} required className=' text-dimWhite bg-navbar h-44 p-3 border-2 border-slate-500 hover:border-boagreen focus:border-boagreen outline-none font-poppins font-medium rounded-lg' name="message" />
@@ -105,7 +105,7 @@ const Contactform = (props: Props) => {
               <span className=' text-dimWhite'><span className=' text-rose-500 font-bold text-lg mx-1'>*</span>I have read the <motion.span whileTap={{ scale: 0.9 }} className=' inline-block cursor-pointer text-cyan-300 font-bold mx-1'>Privacy Policy</motion.span> and agree to its terms.</span>
             </div>
 
-            <motion.button whileTap={{ scale: 0.8 }} className=' bg-boagreen px-4 py-2 rounded-md font-poppins text-xl font-bold'>SUBMIT</motion.button>
+            <motion.button whileTap={{ scale: 0.8 }} className=' bg-lime-400 px-4 py-2 rounded-md font-poppins text-xl font-bold'>SUBMIT</motion.button>
 
           </div>
 
