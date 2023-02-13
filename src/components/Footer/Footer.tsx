@@ -1,8 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import { IonIcon } from '@ionic/react'
-import { logoLinkedin, logoYoutube, logoFacebook, logoTwitter, atOutline } from 'ionicons/icons'
+import { IoLogoYoutube, IoLogoLinkedin, IoLogoFacebook, IoLogoTwitter, } from 'react-icons/io5';
+import { MdCopyright } from 'react-icons/md';
+
 import footerLinks from '@/config/footerLinks'
 
 
@@ -50,19 +51,19 @@ const Footer = () => {
           <div className=' flex space-x-4 items-center'>
 
             <span className=' group flex justify-center items-center rounded-full p-2 bg-slate-600 hover:bg-white'>
-              <IonIcon className=' w-7 h-7 text-dimWhite rounded-xl group-hover:text-slate-700 ' icon={logoLinkedin} />
+              <IoLogoLinkedin className=' w-5 h-5 text-dimWhite rounded-xl group-hover:text-slate-700 ' />
             </span>
 
             <span className=' group flex justify-center items-center rounded-full p-2 bg-slate-600 hover:bg-white'>
-              <IonIcon className=' w-7 h-7 text-dimWhite rounded-xl group-hover:text-slate-700 ' icon={logoYoutube} />
+              <IoLogoTwitter className=' w-5 h-5 text-dimWhite rounded-xl group-hover:text-slate-700 ' />
             </span>
 
             <span className=' group flex justify-center items-center rounded-full p-2 bg-slate-600 hover:bg-white'>
-              <IonIcon className=' w-7 h-7 text-dimWhite rounded-xl group-hover:text-slate-700 ' icon={logoTwitter} />
+              <IoLogoYoutube className=' w-5 h-5 text-dimWhite rounded-xl group-hover:text-slate-700 ' />
             </span>
 
             <span className=' group flex justify-center items-center rounded-full p-2 bg-slate-600 hover:bg-white'>
-              <IonIcon className=' w-7 h-7 text-dimWhite rounded-xl group-hover:text-slate-700 ' icon={logoFacebook} />
+              <IoLogoFacebook className=' w-5 h-5 text-dimWhite rounded-xl group-hover:text-slate-700 ' />
             </span>
 
           </div>
@@ -80,7 +81,7 @@ const Footer = () => {
 
         <div className=' flex w-full justify-end'>
           <span className=' flex items-center text-slate-400 text-xs font-poppins font-semibold'>All rights reserved by Innobytes. Copyright
-            <IonIcon className=' w-4 h-4 mx-1' icon={atOutline} />
+            <MdCopyright className=' w-4 h-4 mx-1' />
             2023
           </span>
 

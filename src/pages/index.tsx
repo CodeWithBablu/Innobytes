@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react';
 import feedBacks from '@/config/feedback';
 import Footer from '@/components/Footer/Footer';
@@ -92,7 +92,7 @@ export default function Home() {
 
             <div>
               <h2 className=' text-dimWhite text-2xl sm:text-5xl font-bold font-poppins'>What our{' '}
-                <span className=' sm:block text-gradient bg-gradient-to-br from-cyan-400 to-pink-500 text-4xl sm:text-6xl font-bold font-poppins'>Clients say</span>
+                <span className=' sm:block text-gradient bg-gradient-to-br from-sky-500 to-rose-500 text-4xl sm:text-6xl font-bold font-poppins'>Clients say</span>
               </h2>
             </div>
 
@@ -148,7 +148,6 @@ export default function Home() {
 
         {/* //// 3 Page end */}
 
-        <Footer />
 
       </main>
     </>

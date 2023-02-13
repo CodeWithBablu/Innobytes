@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Footer from '../Footer/Footer'
 
 
 const Layout = ({ children }: any) => {
@@ -103,6 +104,7 @@ const Layout = ({ children }: any) => {
           <div className='px-2 max:px-0 max-w-[1800px] m-auto relative overflow-hidden'>
             <Navbar />
             {children}
+            <Footer />
           </div>
         </>
       }
